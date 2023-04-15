@@ -1,7 +1,7 @@
 import './header.css';
 import React, { useState } from 'react';
+import { Fade } from 'react-awesome-reveal';
 const link = ['Clothes', 'Sneakers', 'Bags', 'Accessorize'];
-const Fade = require('react-reveal/Fade');
 export const Header = () => {
     const [burger_class, setBurgerClass] = useState("burger-bar unclicked");
     const [menu_class, setMenuClass] = useState("menu hidden");
@@ -21,16 +21,16 @@ export const Header = () => {
     return (
         <header className="header">
             <div className="header__container">
-                <Fade top>
-                    <div className="header__logo-block">
+                <div className="header__logo-block">
+                    <Fade direction='down' triggerOnce={true}>
                         <a href="/" className="header__logo" data-aos="fade-down">LANDING</a>
-                    </div>
-                </Fade>
+                    </Fade>
+                </div>
 
                 <nav className={"nav__menu menu " + menu_class}>
                     <ul className="menu__list">
                         {link.map((link, index) => (
-                            <Fade top key={index}>
+                            <Fade direction='down' triggerOnce={true} key={index}>
                                 <li className="menu__item">
                                     <a href="" className="menu__link">{link}</a>
                                 </li>
@@ -44,11 +44,11 @@ export const Header = () => {
                     <div className={burger_class}></div>
                     <div className={burger_class}></div>
                 </div>
-                <Fade top>
-                    <div className="header__buy-link">
+                <div className="header__buy-link">
+                    <Fade direction='down' triggerOnce={true}>
                         <a href="/" className="link__buy">Buy</a>
-                    </div>
-                </Fade>
+                    </Fade>
+                </div>
             </div>
         </header>
     )

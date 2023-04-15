@@ -7,7 +7,8 @@ import './slider.css';
 import one from '../../source/slider/01.png';
 import two from '../../source/slider/02.png';
 import three from '../../source/slider/03.png';
-const Fade = require('react-reveal/Fade');
+import { Fade } from 'react-awesome-reveal';
+
 
 const image = [one, two, three, one, two, three]
 
@@ -38,13 +39,13 @@ export const SectionSlider = () => {
     return (
         <section className="page__slider">
             <div className="slider__container">
-                <Fade bottom>
+                <Fade direction='down' triggerOnce={true}>
                     <h1 className="slider__title">
                         CHOOSE LOOKS
                     </h1>
                 </Fade>
                 <div className="slider__content">
-                    <Fade top>
+                    <Fade direction='up' triggerOnce={true}>
                         <Swiper
                             modules={[Navigation, Pagination]}
                             {...params}
@@ -61,22 +62,24 @@ export const SectionSlider = () => {
                     <div className="swiper-button-next"></div>
                     <div className="swiper-button-prev"></div>
                 </div>
-                <Fade bottom>
+                <Fade direction='down' triggerOnce={true}>
                     <div className="slider__title">
                         MORE ABOUT US
                     </div>
                 </Fade>
-                <Fade left cascade>
-                    <div className="slider__text">
+                <div className="slider__text">
+                    <Fade direction='left' triggerOnce={true}>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed enim sed libero commodo efficitur. Suspendisse et lorem ac neque dictum pellentesque nec sit amet nisl. Fusce rutrum quis purus ut pretium. Vivamus ornare mauris non ligula egestas, accumsan faucibus quam sollicitudin. Duis efficitur lorem tellus. Aliquam non rhoncus felis, porttitor consequat quam. Morbi gravida semper mattis. Nunc ultrices justo in pulvinar convallis. Curabitur dapibus ut tellus eu condimentum. Morbi vitae convallis purus, ac finibus ipsum.
                         </p>
-                        <br />
+                    </Fade>
+                    <br />
+                    <Fade direction='left' delay={200} triggerOnce={true}>
                         <p>
                             Suspendisse nec pharetra turpis. Aenean id nunc id orci aliquam pulvinar eget vitae nisl. In ligula neque, vestibulum vel arcu eu, eleifend vestibulum tortor. Duis facilisis, est et aliquam dapibus, urna mauris sagittis mi, et mattis metus magna vel tellus. Phasellus sit amet volutpat ante, ut condimentum lorem. Quisque auctor sollicitudin dui, vitae egestas nunc suscipit et. Nullam eu quam sem. Donec a nibh molestie, aliquam libero maximus, feugiat velit. Curabitur ac accumsan velit. In hac habitasse platea dictumst.
                         </p>
-                    </div>
-                </Fade>
+                    </Fade>
+                </div>
             </div>
         </section>
     )
